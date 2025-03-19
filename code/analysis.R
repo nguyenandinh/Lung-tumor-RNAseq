@@ -1,3 +1,17 @@
+#Setting up environment ===================================================
+# Clean environment
+rm(list = ls(all.names = TRUE)) # will clear all objects including hidden objects
+gc() # free up memory and report the memory usage
+options(max.print = .Machine$integer.max, scipen = 999, stringsAsFactors = F, dplyr.summarise.inform = F) # avoid truncated output in R console and scientific notation
+# Loading relevant libraries 
+library(tidyverse) # includes ggplot2, for data visualisation. dplyr, for data manipulation.
+library(Seurat)
+# Set input path
+path <- "~/Downloads/file_raw/" # set path to work directory (contained data)
+setwd(path)
+list.files(path)
+set.seed(42)
+
 # 1. Import data ===================================================
 nsclc_sm <- Read10X_h5(filename = "40k_NSCLC_DTC_3p_HT_nextgem_Multiplex_count_raw_feature_bc_matrix.h5")
 str(nsclc_sm) # Check the multiple modalities (list of matrixes) - we're interested in Gene expression

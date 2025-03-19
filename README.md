@@ -19,22 +19,22 @@ https://cf.10xgenomics.com/samples/cell-exp/6.1.0/40k_NSCLC_DTC_3p_HT_nextgem_Mu
 ---
 
 ## 3 Analysis Workflow
-# 3.1 Data Import
+3.1 Data Import
 Use Read10X_h5() to load the .h5 file and extract gene expression data.
 
-# 3.2 Create Seurat Object
+3.2 Create Seurat Object
 Initialize a Seurat object with CreateSeuratObject(), applying cell filtering criteria.
 
-# 3.3 Quality Control (QC)
+3.3 Quality Control (QC)
 Compute the percentage of mitochondrial (MT) genes.
 Visualize data quality using VlnPlot() and FeatureScatter().
 Filter cells based on gene expression thresholds (nFeature_RNA, percent_mt).
 
-# 3.4 Normalization & Feature Selection
+3.4 Normalization & Feature Selection
 Normalize data with NormalizeData().
 Identify highly variable genes using FindVariableFeatures().
 
-# 3.5 Dimensionality Reduction & Clustering
+3.5 Dimensionality Reduction & Clustering
 Perform PCA with RunPCA() and assess with ElbowPlot().
 Cluster cells using FindNeighbors() and FindClusters().
 Apply UMAP for visualization with RunUMAP().
